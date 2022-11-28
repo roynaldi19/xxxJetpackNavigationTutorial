@@ -12,9 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 
 @Composable
-fun ListScreen() {
+fun ListScreen(navHostController: NavHostController) {
     val elements = MutableList(100) { it }
     LazyColumn(modifier = Modifier.background(Color.LightGray)) {
         items(elements) {
@@ -24,7 +25,7 @@ fun ListScreen() {
                 .clip(RoundedCornerShape(4.dp))
                 .background(Color.White)
                 .padding(4.dp)
-                .clickable { /* TODO */ }
+                .clickable { navHostController.navigate(Destination.Detail.createRoute(it)) }
             ) {
                 Text(text = "Element $it")
             }
