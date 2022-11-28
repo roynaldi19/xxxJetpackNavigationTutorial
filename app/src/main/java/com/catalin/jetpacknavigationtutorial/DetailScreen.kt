@@ -8,13 +8,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun DetailScreen(elementId: Int) {
+fun DetailScreen(heroId: String) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly
     ) {
         Text(text = "Detail screen")
-        Text(text = "You have clicked on element $elementId")
     }
 }
